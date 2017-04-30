@@ -1,13 +1,16 @@
 package com.theironyard.charlotte;
 
+import java.io.FileNotFoundException;
 import java.util.Arrays;
 
 public class Main {
 
-    public static void main(String[] args) {
-        fizzBuzz();
-        System.out.println(Arrays.toString(fibSeq(9)));
-        System.out.println(boost(345));
+    public static void main(String[] args) throws FileNotFoundException {
+    //	fizzBuzz();
+        //interviewFizzBuzz(100);
+       // fibSeq(12);
+//      MovieSelector.movieSelector();
+      KidFriendlyStuff.kidMovies();
     }
 
     public static void fizzBuzz() {
@@ -21,6 +24,43 @@ public class Main {
             } else {
                 System.out.println(String.valueOf(i));
             }
+
+//            (defn fizz-buzz
+//        (when < x 100)
+//        (if true?
+//                (and ( mod x 3) (mod x 5) 0)
+//        (println "fizzbuzz"))
+    }
+
+	public static String [] interviewFizzBuzz(int counter)
+	{
+		String [] output = new String[counter];
+		for (int i = 1; i <= counter; i++)
+		{
+			if (i % 3 == 0 && i % 5 == 0)
+			{
+				output[i-1] = "FizzBuzz";
+				//System.out.println("FizzBuzz");
+			}
+			else if (i % 3 == 0)
+			{
+				output[i-1] = "Fizz";
+				//System.out.println("Fizz");
+			}
+			else if (i % 5 == 0)
+			{
+				output[i-1] = "Buzz";
+				//System.out.println("Buzz");
+			}
+			else
+			{
+				output[i-1] = String.valueOf(i);
+				//System.out.println(String.valueOf(i));
+
+			}
+		}
+		System.out.println(Arrays.toString(output));
+		return output;
     }
 
     public static int[] fibSeq(int x) {
@@ -53,6 +93,8 @@ public class Main {
         }
         return Integer.valueOf(valueX);
     }
+
+
 }
 
 
